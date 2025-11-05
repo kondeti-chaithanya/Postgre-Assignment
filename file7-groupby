@@ -1,0 +1,6 @@
+SELECT CustomerID,
+       COUNT(OrderID) AS TotalOrders,
+       SUM(Amount) AS TotalAmount
+FROM Orders
+GROUP BY CustomerID
+HAVING SUM(Amount) > 1000;
